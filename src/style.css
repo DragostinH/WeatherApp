@@ -1,0 +1,17 @@
+*,
+::before,
+::after{
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    /* Size */
+    width: 100vw;
+    height: 100vh;
+
+    /* Display */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
