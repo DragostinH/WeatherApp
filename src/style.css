@@ -1,17 +1,87 @@
 *,
 ::before,
-::after{
+::after {
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
 
-body{
-    /* Size */
+:root {
+    --light-red: #e63946;
+    --very-light-blue: #f1faee;
+    --light-blue: #a8dadc;
+    --middle-blue: #457b9d;
+    --dark-blue: #1d3557;
+}
+
+
+/* BODY */
+
+body {
+    /* Dimensions */
+    /* gap: 1rem; */
     width: 100vw;
     height: 100vh;
 
     /* Display */
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+
+    /* background */
+    background-position: center;
+    background-size: cover;
+    background-color: var(--very-light-blue);
+
+    /*  */
+
+}
+
+main{
+    height: 100%;
+    width: 100%;
+}
+
+/* HEADER */
+header{
+    /* Display */
+    display: flex;
     align-items: center;
     justify-content: center;
+
+    /* Dimensions */
+    width: 100%;
+    height: max(25%, 350px);
+    
+    /* Border */
+    border: 2px solid var(--dark-blue);
+}
+
+footer{
+    /* Display */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Dimensions */
+    width: 100%;
+
+    /*Border  */
+    border: 2px solid red;
+}
+
+/* Search form */
+.search-bar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Weather Card Container main CSS */
+.card-container {
+    /* Border */
+    border: 2px solid var(--light-red);
+    /* background */
+    background-position: center;
+    background-size: cover;
 }

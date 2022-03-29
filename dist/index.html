@@ -16,33 +16,56 @@
 
 <body>
     <!-- Header -->
-    <header></header>
+    <header>
+        <h1>Weather App</h1>
+    </header>
 
     <!-- Main -->
     <main>
-
-        <div class="search-bar">
+        <section class="search-bar">
             <form action="#" id="my-form">
                 <label for="search-bar">Search city:
                     <input type="search" name="search-bar" id="search-bar">
                 </label>
-
-
             </form>
             <button class="submit-btn">
                 Submit
             </button>
-        </div>
+        </section>
 
-        <p class="city-p">City:</p>
-        <p class="temp-p">Temp:</p>
-        <p class="feels-like">Feels like:</p>
-        <p class="pressure">Pressure:</p>
+        <article class="card-container">
+            <p class="city-p">City:</p>
+            <p class="temp-p">Temp:</p>
+            <p class="feels-like">Feels like:</p>
+            <p class="pressure">Pressure:</p>
+            <div>
+                <span class="weather-icon">Icon:</span>
+                <img class="weather-icon-png" src="" alt="">
+            </div>
+            <p></p>
+            <div class="country-flag-container">
+                <span class="flag-span">Flag: </span>
+                <img src="" alt="" class="flag-png">
+            </div>
+        </article>
+
+        <section class="weekly-view">
+            <h2>weekly view</h2>
+            <p class="forecast 1">1</p>
+            <p class="forecast 2">2</p>
+            <p class="forecast 3">3</p>
+            <p class="forecast 4">4</p>
+            <p class="forecast 5">5</p>
+            <p class="forecast 6">6</p>
+            <p class="forecast 7">7</p>
+        </section>
     </main>
 
 
     <!-- Footer -->
-    <footer></footer>
+    <footer>
+        <h2>Footer</h2>
+    </footer>
 </body>
 
 </html>
