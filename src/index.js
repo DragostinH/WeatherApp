@@ -1,6 +1,7 @@
 const { format, fromUnixTime, getUnixTime, parseISO, parse } = require("date-fns");
 const { getTimezoneOffset } = require("date-fns-tz");
 const { changeBodyBackgroundImage } = require("./changeBodyBackground");
+const { createCountryCard } = require("./createCountryCard");
 const { default: getCountryFlag } = require("./getCountryFlag");
 const { getWeatherData } = require("./getWeatherData");
 
@@ -91,6 +92,13 @@ const indexPage = (() => {
         flagElement.src = getCountryFlag(cityInfo.resolvedPromises[2].sys.country);
 
     }
+
+
+
+
+
+    // testing
+    createCountryCard();
 
 
 })();

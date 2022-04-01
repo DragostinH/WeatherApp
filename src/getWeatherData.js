@@ -32,5 +32,5 @@ export async function getWeatherData(city) {
 
     const resolvedPromises = await Promise.all([geo, obj, currentForecast, weeklyForecast]);
 
-    return { resolvedPromises };
+    return {resolvedPromises};
 }
