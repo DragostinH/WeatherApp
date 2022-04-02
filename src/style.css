@@ -31,19 +31,19 @@ body {
     /* background */
     background-position: center;
     background-size: cover;
-    background-color: var(--very-light-blue);
+    background-color: var(--middle-blue);
 
     /*  */
 
 }
 
-main{
+main {
     height: 100%;
     width: 100%;
 }
 
 /* HEADER */
-header{
+header {
     /* Display */
     display: flex;
     align-items: center;
@@ -52,17 +52,17 @@ header{
     /* Dimensions */
     width: 100%;
     height: max(25%, 350px);
-    
+
     /* Border */
     border: 2px solid var(--dark-blue);
 }
 
-footer{
+footer {
     /* Display */
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     /* Dimensions */
     width: 100%;
 
@@ -71,7 +71,7 @@ footer{
 }
 
 /* Search form */
-.search-bar{
+.search-bar {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,9 +79,86 @@ footer{
 
 /* Weather Card Container main CSS */
 .card-container {
+    /* Display */
+    display: flex;
+    flex-direction: column;
+    /* Box computed */
+    padding: 1rem;
+    /* Box size */
+    width: fit-content;
     /* Border */
     border: 2px solid var(--light-red);
     /* background */
-    background-position: center;
-    background-size: cover;
 }
+
+p {
+    color: white;
+}
+
+/* Card title and timeframe */
+
+.timeframe-container {
+    /* border: 2px solid var(--light-red); */
+
+}
+
+.timeframe {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.dt {
+    font-size: small;
+}
+
+/* Temperature info*/
+
+.curr-temp-container{
+    display: flex;
+    font-size: 3rem;
+}
+
+.temperature-container{
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    gap: 4rem;
+    border: 2px solid var(--light-red);
+}
+
+
+
+
+.weather-icon{
+    width: 100px;
+}
+
+.weather-description{
+    font-weight: bold;
+}
+
+
+.weather-main{
+    display: grid;
+    grid-template-columns: max-content max-content max-content max-content max-content;
+    gap: 2rem;
+    font-size: 1rem;
+}
+
+.weather-main div p{
+}
+.km {
+    display: flex;
+}
+
+.km p{
+    margin: 0;
+}
+.wind-icon{
+    width: 20px;
+}
+
+.info-icon{
+    width: 1rem;
+}
+
