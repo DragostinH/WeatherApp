@@ -4,6 +4,8 @@ export async function changeBodyBackgroundImage(element, keyword){
     // unsplash API key: z6n1MJxv6cPcsv2k2k_57DD3etDzVh517LMv1Bwl0rI
     // Get a random image using a specific keyword and change the element's background
 
+
+
     try {
     const randomNum = getRandomNum(9);
 
@@ -15,6 +17,6 @@ export async function changeBodyBackgroundImage(element, keyword){
         console.error("Unsplash didn't work as planned.")
     }
 
-    
+
 
 }

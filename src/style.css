@@ -11,6 +11,7 @@
     --light-blue: #a8dadc;
     --middle-blue: #457b9d;
     --dark-blue: #1d3557;
+    --opaque-background: rgba(0, 0, 0, 0.4);
 }
 
 
@@ -83,14 +84,28 @@ footer {
     display: flex;
     flex-direction: column;
     /* Box computed */
-    padding: 1rem;
     /* Box size */
     width: fit-content;
     /* Border */
-    border: 2px solid var(--light-red);
+    border: 2px solid white;
     border-radius: 0.75rem;
     /* background */
+    background-size: cover;
+    background-color: var(--opaque-background);
+    
+}
 
+
+
+.area-info-container{
+    background-color: var(--opaque-background);
+    border-radius: 0.75rem 0.75rem 0 0;
+}
+
+
+
+.area-info-container {
+    display: flex;
 }
 
 p {
@@ -100,7 +115,7 @@ p {
 /* Card title and timeframe */
 
 .timeframe-container {
-    /* border: 2px solid var(--light-red); */
+    background-color: var(--opaque-background);
 
 }
 
@@ -115,52 +130,70 @@ p {
 
 /* Temperature info*/
 
-.curr-temp-container{
+.curr-temp-container {
     display: flex;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
-.temperature-container{
+
+
+.temperature-container {
     display: flex;
     align-items: center;
     font-size: 1.25rem;
+    width: 100%;
     gap: 4rem;
-    border: 2px solid var(--light-red);
+    background-color: var(--opaque-background);
 }
 
 
 
 
-.weather-icon{
-    width: 100px;
-}
 
-.weather-description{
+.weather-description {
     font-weight: bold;
 }
 
 
-.weather-main{
+.weather-main {
     display: grid;
     grid-template-columns: max-content max-content max-content max-content max-content;
     gap: 2rem;
     font-size: 1rem;
+    background-color: var(--opaque-background);
+    border-radius: 0 0 0.75rem 0.75rem;
+
 }
 
-.weather-main div p{
+.area-info-container,
+.curr-temp-container,
+.timeframe-container,
+.weather-main{
+    
+    /* padding: 1rem; */
 }
+
+.weather-main div p {
+    font-weight: 500;
+}
+
 .km {
     display: flex;
 }
 
-.km p{
+.km p {
     margin: 0;
 }
-.wind-icon{
+
+.wind-icon {
     width: 20px;
 }
 
-.info-icon{
+.info-icon {
     width: 1rem;
 }
 
+.weather-map-article {
+    width: 600px;
+    height: 600px;
+}

@@ -1,9 +1,8 @@
 import { fromUnixTime, getUnixTime } from "date-fns";
-import createDiv from "./createDiv";
 import getCountryFlag from "./getCountryFlag";
 import { getWeatherData } from "./getWeatherData";
 
-export async function createCountryCard() {
+export async function getCountryObj(input) {
     // Create a country card with the required info:
     // 1. Country flag
     // 2. City
@@ -13,14 +12,9 @@ export async function createCountryCard() {
     // 6. Weather Icon 
     // 7. Date time
 
-    const main = document.querySelector('main');
-    const searchBar = document.querySelector('#search-bar');
+    const weatherData = (await getWeatherData(input)).resolvedPromises;
 
 
-    const cardContainer = createDiv('card-container');
-
-
-    const weatherData = (await getWeatherData('Sofia')).resolvedPromises;
 
     // City name, lat, lon, country code, local names:
     const cityCoord = weatherData[1];
@@ -37,11 +31,14 @@ export async function createCountryCard() {
     // Country flag:
     const countryFlag = getCountryFlag(currDayWeatherData.sys.country);
 
+    // Curr day country code:
+    const currDayCountryCode = currDayWeatherData.sys.country;
+
     // City name
     const cityName = currDayWeatherData.name;
 
     // Current day temp
-    const currentTemp = Math.floor(currDayWeatherData.main.temp);
+    const currTemp = Math.floor(currDayWeatherData.main.temp);
 
     // Current day temp feels_like:
     const currDayFeelsLike = Math.floor(currDayWeatherData.main.feels_like);
@@ -76,18 +73,44 @@ export async function createCountryCard() {
     // Curr day wind speed
     const currDayWindSpeed = currDayWeatherData.wind.speed;
 
+    // Curr day dew degrees
+    // const dewTemp = currDayWeatherData.
+
+    // Curr day timezone difference from UTC
+    const currDayTimezoneDifference = currDayWeatherData.timezone;
 
 
 
 
 
+  
+    const countryCardObj = {
+        countryFlag: countryFlag,
+        countryCode:currDayCountryCode,
+        cityName: cityName,
+        currTemp: currTemp,
+        feelsLike: currDayFeelsLike,
+        humidity: currDayHumidity,
+        pressure: currDayPressure,
+        tempMax: currDayTempMax,
+        tempMin: currDayTempMin,
+        weatherDesc: currDayWeatherDesc,
+        weatherIcon: currDayWeatherIconID,
+        dateTime: currDayDt,
+        visibility: currDayVisibility,
+        windDeg: currDayWindDeg,
+        windSpeed: currDayWindSpeed,
+        timezone: currDayTimezoneDifference
+    };
 
 
     // console logs
-    console.log(cityCoord);
     console.log(currDayWeatherData);
+    // console.log(countryCardObj);
     console.log(weekAheadData);
 
 
+
+    return countryCardObj
 
 }

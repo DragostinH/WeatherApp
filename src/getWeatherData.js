@@ -24,13 +24,13 @@ export async function getWeatherData(city) {
         lon: obj[0].lon
     }
 
-    const currentForecast = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=b80bfc02e42b690c3e4ed8161d1574e4`)
+    const cityInfo = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=b80bfc02e42b690c3e4ed8161d1574e4`)
         .then(res => res.json());
 
-    const weeklyForecast = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&exclude=minutely,hourly,current,alerts&appid=b80bfc02e42b690c3e4ed8161d1574e4`)
+    const oneWeatherCall = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&exclude=minutely,hourly&appid=b80bfc02e42b690c3e4ed8161d1574e4`)
         .then(r => r.json());
 
-    const resolvedPromises = await Promise.all([geo, obj, currentForecast, weeklyForecast]);
+    const resolvedPromises = await Promise.all([geo, obj, cityInfo, oneWeatherCall]);
 
     return {resolvedPromises};
 }
