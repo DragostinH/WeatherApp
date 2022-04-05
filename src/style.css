@@ -11,7 +11,7 @@
     --light-blue: #a8dadc;
     --middle-blue: #457b9d;
     --dark-blue: #1d3557;
-    --opaque-background: rgba(0, 0, 0, 0.4);
+    --opaque-background: rgba(0, 0, 0, 0.6);
 }
 
 
@@ -19,7 +19,7 @@
 
 body {
     /* Dimensions */
-    /* gap: 1rem; */
+    gap: 1rem;
     width: 100vw;
     height: 100vh;
 
@@ -41,6 +41,7 @@ body {
 main {
     height: 100%;
     width: 100%;
+
 }
 
 /* HEADER */
@@ -79,26 +80,37 @@ footer {
 }
 
 /* Weather Card Container main CSS */
+
+
+
 .card-container {
     /* Display */
     display: flex;
     flex-direction: column;
     /* Box computed */
+    padding: 1.5rem;
     /* Box size */
     width: fit-content;
     /* Border */
     border: 2px solid white;
+    box-shadow: 0px 0px 0.5rem;
     border-radius: 0.75rem;
     /* background */
     background-size: cover;
     background-color: var(--opaque-background);
-    
+
 }
 
+.weather-section {
+    width: min-content;
+    border-radius: 0.75rem;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
 
+}
 
-.area-info-container{
-    background-color: var(--opaque-background);
+.area-info-container {
     border-radius: 0.75rem 0.75rem 0 0;
 }
 
@@ -114,10 +126,7 @@ p {
 
 /* Card title and timeframe */
 
-.timeframe-container {
-    background-color: var(--opaque-background);
-
-}
+.timeframe-container {}
 
 .timeframe {
     font-weight: bold;
@@ -143,7 +152,6 @@ p {
     font-size: 1.25rem;
     width: 100%;
     gap: 4rem;
-    background-color: var(--opaque-background);
 }
 
 
@@ -160,7 +168,6 @@ p {
     grid-template-columns: max-content max-content max-content max-content max-content;
     gap: 2rem;
     font-size: 1rem;
-    background-color: var(--opaque-background);
     border-radius: 0 0 0.75rem 0.75rem;
 
 }
@@ -168,8 +175,8 @@ p {
 .area-info-container,
 .curr-temp-container,
 .timeframe-container,
-.weather-main{
-    
+.weather-main {
+
     /* padding: 1rem; */
 }
 

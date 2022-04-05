@@ -4,9 +4,10 @@ const { changeBodyBackgroundImage } = require("./changeBodyBackground");
 const { getCountryObj } = require("./getCountryObj");
 const { default: getCountryFlag } = require("./getCountryFlag");
 const { getWeatherData } = require("./getWeatherData");
+const { default: updateWeatherCard } = require("./updateWeatherCard");
 
 
-const indexPage = (() => {
+const indexPage = (async () => {
     // Finding with lattitude and longitude:
     // https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
 
@@ -23,115 +24,57 @@ const indexPage = (() => {
     // https://countryflagsapi.com/png/{COUNTGRY CODE}
 
     // API Key for Openweathermap:
-    // b80bfc02e42b690c3e4ed8161d1574e4
-
-    // Create a country card with the required info:
-    // 1. Country flag
-    // 2. City
-    // 3. Temperature
-    // 4. What it feels like
-    // 5. Weather condition
-    // 6. Weather Icon 
-
-
-
-    let cityNameAndId;
-    let cityMainInfo;
+    // b80bfc02e42b690c3e4ed8161d1574e4 
 
     // Page search field:
     const searchBar = document.querySelector('#search-bar');
+
     // Search submit btn:
     const submitBtn = document.querySelector('.submit-btn')
 
-    // Card background
-    const cardContainer = document.querySelector('.card-container');
-    // City name
-    const cityName = document.querySelector('.city-p');
-    // Country code span
-    const countryCode = document.querySelector('.country-code');
-    // Date time paragraph
-    const dateTime = document.querySelector('.current-datetime');
-    // Weather icon
-    const weatherIcon = document.querySelector('.weather-icon');
-    // Current temperature
-    const currTemp = document.querySelector('.curr-temp');
-    // Weather description
-    const weatherDesc = document.querySelector('.weather-description');
-    // Feels like text:
-    const feelsLikeText = document.querySelector('.feels-like-text');
-    // feels like temp:
-    const feelsLikeTemp = document.querySelector('.feels-like-temp');
+    // Main weather container 
+    const weatherSection = document.querySelector('.weather-section');
 
-    // Weather MAIN
-    // Wind reading
-    const windSpeed = document.querySelector('.wind-reading');
-    // Wind direction
-    const windDeg = document.querySelector('.wind-icon');
-    // Humidity reading
-    const humidityReading = document.querySelector('.humidity-reading');
-    // Visibility reading
-    const visibilityReading = document.querySelector('.visibility-reading');
-    // Pressure reading:
-    const pressureReading = document.querySelector('.pressure-reading');
-    // Dew temperature
-    const dewTemp = document.querySelector('.dew-degrees');
+    const elementsObj = {
+        cityName: document.querySelector('.city-p'),
+        countryCode: document.querySelector('.country-code'),
+        dateTime: document.querySelector('.current-datetime'),
+        weatherIcon: document.querySelector('.weather-icon'),
+        currTemp: document.querySelector('.curr-temp'),
+        weatherDesc: document.querySelector('.weather-description'),
+        feelsLikeText: document.querySelector('.feels-like-text'),
+        feelsLikeTemp: document.querySelector('.feels-like-temp'),
+        windSpeed: document.querySelector('.wind-reading'),
+        windDeg: document.querySelector('.wind-icon'),
+        humidity: document.querySelector('.humidity-reading'),
+        visibility: document.querySelector('.visibility-reading'),
+        pressure: document.querySelector('.pressure-reading'),
+        dewTemp: document.querySelector('.dew-degrees')
+    }
 
+    let cityInfo = (await getWeatherData('London')).resolvedPromises;
 
-
-
-    // Time format:
-    // const currentDate = format(new Date(), 'yyyy/MM/dd hh:mm');
-    // const parsedCurrDate = parse(currentDate, 'yyyy/MM/dd hh:mm', new Date());
-    // const akita = getUnixTime((parsedCurrDate));
-    // const timezoneOffset = getTimezoneOffset('3600');
-
+    updateWeatherCard(elementsObj, cityInfo);
+    changeBodyBackgroundImage(weatherSection,
+        cityInfo[2].name,
+        cityInfo[3].current.weather[0].description)
 
     submitBtn.onclick = async () => {
         const input = searchBar.value.trim();
         if (input === '') {
             console.error('Please input a city');
         } else {
-
             try {
-                cityNameAndId = (await (await getWeatherData(input)).resolvedPromises[2])
-                cityMainInfo = (await getWeatherData(input)).resolvedPromises[3].current;
-
+                cityInfo = (await getWeatherData(input)).resolvedPromises;
+                updateWeatherCard(elementsObj, cityInfo);
+                changeBodyBackgroundImage(weatherSection,
+                    cityInfo[2].name,
+                    cityInfo[3].current.weather[0].description);
             } catch {
-                console.error('Please input a city');
+                console.error('Something went wrong with getting the weather data.');
 
             }
         }
-
-
-        console.log(cityNameAndId);
-        console.log(cityMainInfo);
-        // console.log(windDeg);
-
-        changeBodyBackgroundImage(cardContainer, cityMainInfo.weather[0].description);
-
-        const currTime = fromUnixTime(cityMainInfo.dt);
-        const utcTime = utcToZonedTime(currTime, "Europe/London");
-        const formattedTime = format(utcTime, 'p');
-        // const parsedCurTime = parse(formattedTime, 'hh:mm', new Date());
-
-
-        cityName.textContent = `${cityNameAndId.name},`;
-        countryCode.textContent = cityNameAndId.sys.country;
-        dateTime.textContent = formattedTime;
-        weatherIcon.src = `http://openweathermap.org/img/wn/${cityMainInfo.weather[0].icon}@2x.png`;
-        currTemp.textContent = `${Math.floor(cityMainInfo.temp)} °C`;
-        weatherDesc.textContent = cityMainInfo.weather[0].description.toUpperCase();
-        feelsLikeTemp.textContent = `${Math.floor(cityMainInfo.feels_like)} °C`;
-
-        windSpeed.textContent = `${Math.floor(cityMainInfo.wind_speed)} km/h`;
-        windDeg.style.transform =`rotate(${cityMainInfo.wind_deg}deg)`;
-        humidityReading.textContent = `${cityMainInfo.humidity} %`;
-        visibilityReading.textContent = `${(cityMainInfo.visibility) / 1000} km`;
-        pressureReading.textContent = `${cityMainInfo.pressure} hPa`;
-        dewTemp.textContent = `${Math.floor(cityMainInfo.dew_point)} °C`;
-
-
-
 
     }
 
@@ -157,13 +100,13 @@ const indexPage = (() => {
     // Weather map URL tester:
     // https://maps.openweathermap.org/maps/2.0/weather/1h/TA2/1/1/1?appid=b80bfc02e42b690c3e4ed8161d1574e4
 
-    
-    
-    
-    
-    
 
-    
+
+
+
+
+
+
 
 
 })();
