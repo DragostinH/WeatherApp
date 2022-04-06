@@ -67,6 +67,30 @@ const indexPage = (async () => {
     //     cityInfo[2].name,
     //     cityInfo[3].current.weather[0].description);
 
+    let arre = [3, 5, 34, 2, 21, 7]
+    function sorting(arr) {
+
+        
+        let min = 10000;
+        let smallestNum;
+        for (let i = 0; i < arr.length; i++) {
+            let currNum = arr[i];
+
+            for (let j = i + 1; j < arr.length; j++) {
+                const element = arr[j];
+
+                if (currNum > element) {
+                    arr[i] = element;
+                    arr[j] = currNum;
+                    console.log(arr);
+                    break;
+                }
+            }
+        }
+    }
+
+    sorting(arre);
+
 
     submitBtn.onclick = async () => {
         const input = searchBar.value.trim();
@@ -75,7 +99,7 @@ const indexPage = (async () => {
         } else {
             try {
                 cityInfo = (await getWeatherData(input)).resolvedPromises;
-                updateWeatherCard(elementsObj, 
+                updateWeatherCard(elementsObj,
                     cityInfo);
                 const weekView = createWeekView(cityInfo[3].daily);
                 // changeBodyBackgroundImage(weatherSection,
@@ -83,7 +107,7 @@ const indexPage = (async () => {
                 //     cityInfo[3].current.weather[0].description);
                 removeAllChildNodes(weekAheadSection);
                 appendWeekViewElements(weekView, weekAheadSection);
-            
+
             } catch {
                 console.error('Something went wrong with getting the weather data.');
 
