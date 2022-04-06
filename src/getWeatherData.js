@@ -1,4 +1,4 @@
-export async function getWeatherData(city) {
+export async function getWeatherData(city, units) {
 
 
     // Finding with lattitude and longitude:

@@ -12,6 +12,7 @@
     --middle-blue: #457b9d;
     --dark-blue: #1d3557;
     --opaque-background: rgba(0, 0, 0, 0.6);
+    --shadow: 0px 0px 0.5rem;
 }
 
 
@@ -41,7 +42,9 @@ body {
 main {
     height: 100%;
     width: 100%;
-
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 /* HEADER */
@@ -92,8 +95,8 @@ footer {
     /* Box size */
     width: fit-content;
     /* Border */
-    border: 2px solid white;
-    box-shadow: 0px 0px 0.5rem;
+    border: 1px solid white;
+    box-shadow: var(--shadow);
     border-radius: 0.75rem;
     /* background */
     background-size: cover;
@@ -104,7 +107,7 @@ footer {
 .weather-section {
     width: min-content;
     border-radius: 0.75rem;
-    background-size:cover;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 
@@ -125,8 +128,6 @@ p {
 }
 
 /* Card title and timeframe */
-
-.timeframe-container {}
 
 .timeframe {
     font-weight: bold;
@@ -165,19 +166,11 @@ p {
 
 .weather-main {
     display: grid;
-    grid-template-columns: max-content max-content max-content max-content max-content;
+    grid-template-columns: repeat(5, max-content);
     gap: 2rem;
     font-size: 1rem;
     border-radius: 0 0 0.75rem 0.75rem;
 
-}
-
-.area-info-container,
-.curr-temp-container,
-.timeframe-container,
-.weather-main {
-
-    /* padding: 1rem; */
 }
 
 .weather-main div p {
@@ -203,4 +196,107 @@ p {
 .weather-map-article {
     width: 600px;
     height: 600px;
+}
+
+/* week view */
+.weekahead-view-container {
+    display: flex;
+    width: fit-content;
+    gap: 1rem;
+    /* overflow: hidden; */
+
+}
+
+.dayofweek-container {
+    /* Display */
+    display: flex;
+    /* position: absolute; */
+    flex-direction: column;
+    /* Box computed */
+    padding: 1rem;
+    /* Border */
+    border: 1px solid white;
+    border-radius: 0.75rem;
+    /* Shadow */
+    box-shadow: var(--shadow);
+    /* Transition */
+    transition: background-color 0.2s;
+    /* Overflow */
+}
+
+
+/* 
+.dayofweek-container.b {
+    left: 100%;
+}
+
+.dayofweek-container.c {
+    left: 200%;
+}
+
+.dayofweek-container.d {
+    left: 300%;
+}
+
+.dayofweek-container.e  {
+    left: 400%;
+}
+
+.dayofweek-container.f  {
+    left: 500%;
+}
+
+.dayofweek-container.g  {
+    left: 600%;
+}
+
+.dayofweek-container.h  {
+    left: 700%;
+} */
+
+
+
+/* .test-div{
+    border: 2px solid red;
+    width: 650px;
+    overflow: hidden;
+    display: flex;
+} */
+
+
+
+.temp-container {
+    /* Display */
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.weather-main-desc {
+    margin: 0;
+}
+
+.weather-desc-cont {
+    display: none;
+}
+
+.weather-desc-cont.a {
+    display: block;
+}
+
+.left-side {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.rain-icon {
+    width: 1rem;
+}
+
+/*  EFFECTS ------------------- */
+
+.dayofweek-container:hover {
+    cursor: pointer;
+    background-color: var(--opaque-background);
 }

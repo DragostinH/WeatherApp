@@ -5,6 +5,9 @@ const { getCountryObj } = require("./getCountryObj");
 const { default: getCountryFlag } = require("./getCountryFlag");
 const { getWeatherData } = require("./getWeatherData");
 const { default: updateWeatherCard } = require("./updateWeatherCard");
+const { default: createWeekView } = require("./createWeekView");
+const { default: removeAllChildNodes } = require("./removeAllChildNodes");
+const { default: appendWeekViewElements } = require("./appendWeekViewElements");
 
 
 const indexPage = (async () => {
@@ -35,6 +38,9 @@ const indexPage = (async () => {
     // Main weather container 
     const weatherSection = document.querySelector('.weather-section');
 
+    // Week ahead container
+    const weekAheadSection = document.querySelector('.weekahead-view-container');
+
     const elementsObj = {
         cityName: document.querySelector('.city-p'),
         countryCode: document.querySelector('.country-code'),
@@ -53,11 +59,14 @@ const indexPage = (async () => {
     }
 
     let cityInfo = (await getWeatherData('London')).resolvedPromises;
+    const weekAheadInfo = createWeekView(cityInfo[3].daily);
+    appendWeekViewElements(weekAheadInfo, weekAheadSection);
 
     updateWeatherCard(elementsObj, cityInfo);
-    changeBodyBackgroundImage(weatherSection,
-        cityInfo[2].name,
-        cityInfo[3].current.weather[0].description)
+    // changeBodyBackgroundImage(weatherSection,
+    //     cityInfo[2].name,
+    //     cityInfo[3].current.weather[0].description);
+
 
     submitBtn.onclick = async () => {
         const input = searchBar.value.trim();
@@ -66,10 +75,15 @@ const indexPage = (async () => {
         } else {
             try {
                 cityInfo = (await getWeatherData(input)).resolvedPromises;
-                updateWeatherCard(elementsObj, cityInfo);
-                changeBodyBackgroundImage(weatherSection,
-                    cityInfo[2].name,
-                    cityInfo[3].current.weather[0].description);
+                updateWeatherCard(elementsObj, 
+                    cityInfo);
+                const weekView = createWeekView(cityInfo[3].daily);
+                // changeBodyBackgroundImage(weatherSection,
+                //     cityInfo[2].name,
+                //     cityInfo[3].current.weather[0].description);
+                removeAllChildNodes(weekAheadSection);
+                appendWeekViewElements(weekView, weekAheadSection);
+            
             } catch {
                 console.error('Something went wrong with getting the weather data.');
 
