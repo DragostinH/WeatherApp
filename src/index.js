@@ -9,6 +9,10 @@ const { default: createWeekView } = require("./createWeekView");
 const { default: removeAllChildNodes } = require("./removeAllChildNodes");
 const { default: appendWeekViewElements } = require("./appendWeekViewElements");
 import './style.css';
+import './img/icons/information-icon.png';
+import './img/icons/rain-drop-icon.png';
+import './img/icons/wind-icon.svg';
+import html from "../dist/index.html";
 
 
 const indexPage = (async () => {
