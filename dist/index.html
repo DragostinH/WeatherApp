@@ -35,9 +35,19 @@
         <section class="weather-section">
             <article class="card-container">
                 <div class="area-info-container">
-                    <p class="city-p">
-                    </p>
-                    <p class="country-code"></p>
+                    <div class="country-city-info">
+                        <p class="city-p">
+                        </p>
+                        <p class="country-code"></p>
+                    </div>
+                    <div class="metric-imperial">
+                        <div class="switch-button">
+                            <input class="switch-button-checkbox" type="checkbox"></input>
+                            <label class="switch-button-label" for="">
+                                <span class="switch-button-label-span">°C</span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
                 <div class="timeframe-container">
                     <p class="timeframe">CURRENT WEATHER</p>
@@ -45,8 +55,7 @@
                 </div>
                 <div class="temperature-container">
                     <div class="curr-temp-container">
-                        <img class="weather-icon"
-                            src="../src/img/icons/wind-icon.svg" alt="">
+                        <img class="weather-icon" src="../src/img/icons/wind-icon.svg" alt="">
                         <p class="curr-temp">
                         </p>
                     </div>
@@ -96,12 +105,17 @@
             </article> -->
         </section>
 
-        <div class="test-div">
-            <section class="weekahead-view-container">
+        <section class="weekahead-main-container">
+            <article class="weekahead-view-container">
 
-            </section>
-        </div>
+            </article>
+        </section>
+
     </main>
+    <div class="spinner-container">
+        <div class="spinner">
+        </div>
+    </div>
 
 
     <!-- Footer -->

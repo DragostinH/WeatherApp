@@ -15,7 +15,7 @@ export default function widenDiv(element) {
 
 
 
-        element.style.width = "336px";
+        element.style.width = "fit-content";
         element.childNodes[1].childNodes[1].style.display = "block";
     })
 }

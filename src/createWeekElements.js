@@ -23,6 +23,7 @@ export default function createWeekElemends(obj) {
         const weatherMainDesc = createParagraph(`weather-main-desc ${key}`);
         const rainText = createParagraph(`rain-text ${key}`);
         const rainIcon = createImg(`rain-icon ${key}`);
+        const rainCont = createDiv('rain-cont');
         // Info updates
         datePara.textContent = element.currDay;
         weatherIcon.src = `http://openweathermap.org/img/wn/${element.weatherIcon}@2x.png`;
@@ -30,7 +31,7 @@ export default function createWeekElemends(obj) {
         minTemp.textContent = `${element.minTemp}°C`;
         weatherMainDesc.textContent = element.weatherDesc;
         rainIcon.src = "../src/img/icons/rain-drop-icon.png";
-        rainText.textContent = `${element.chanceOfRain}`
+        rainText.textContent = `${element.chanceOfRain}%`
         // APPENDS----------------
         tempContainer.appendChild(leftSide);
         tempContainer.appendChild(weatherDescCont);
@@ -39,8 +40,9 @@ export default function createWeekElemends(obj) {
         minMaxTempContainer.appendChild(maxTemp);
         minMaxTempContainer.appendChild(minTemp);
         weatherDescCont.appendChild(weatherMainDesc);
-        weatherDescCont.appendChild(rainText);
-        rainText.appendChild(rainIcon);
+        weatherDescCont.appendChild(rainCont);
+        rainCont.appendChild(rainText);
+        rainCont.appendChild(rainIcon);
 
         mainContainer.appendChild(datePara);
         mainContainer.appendChild(tempContainer);

@@ -1,3 +1,5 @@
+import isLoading from "./isLoading";
+
 export async function getWeatherData(city, units) {
 
 
@@ -19,6 +21,10 @@ export async function getWeatherData(city, units) {
     const geo = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&units=metric&limit=1&appid=b80bfc02e42b690c3e4ed8161d1574e4`);
     const obj = await geo.json();
 
+    isLoading(true);
+
+    
+
     const coordinates = {
         lat: obj[0].lat,
         lon: obj[0].lon
@@ -31,6 +37,9 @@ export async function getWeatherData(city, units) {
         .then(r => r.json());
 
     const resolvedPromises = await Promise.all([geo, obj, cityInfo, oneWeatherCall]);
+    
+    isLoading(false);
+
 
     return {resolvedPromises};
 }

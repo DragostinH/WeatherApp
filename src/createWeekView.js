@@ -29,7 +29,7 @@ export default function createWeekView(data) {
             minTemp: Math.floor(element.temp.min),
             weatherIcon: element.weather[0].icon,
             weatherDesc: element.weather[0].main,
-            chanceOfRain: `${(element.pop) * 100} %`,
+            chanceOfRain: `${(element.pop) * 100}`,
             container: createDiv(`dayofweek-container ${containerExtraClass}`)
         }
 

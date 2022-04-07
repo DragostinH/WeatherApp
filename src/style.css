@@ -35,7 +35,8 @@ body {
     background-size: cover;
     background-color: var(--middle-blue);
 
-    /*  */
+    /* box  */
+    margin: 0;
 
 }
 
@@ -114,9 +115,18 @@ footer {
 }
 
 .area-info-container {
-    border-radius: 0.75rem 0.75rem 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
+.country-code{
+    display: inline;
+}
+
+.country-city-info{
+    display: flex;
+}
 
 
 .area-info-container {
@@ -213,6 +223,7 @@ p {
     /* position: absolute; */
     flex-direction: column;
     /* Box computed */
+    width: fit-content;
     padding: 1rem;
     /* Border */
     border: 1px solid white;
@@ -222,6 +233,7 @@ p {
     /* Transition */
     transition: background-color 0.2s;
     /* Overflow */
+
 }
 
 
@@ -256,7 +268,7 @@ p {
 
 
 
-/* .test-div{
+/* .weekahead-main-container{
     border: 2px solid red;
     width: 650px;
     overflow: hidden;
@@ -290,13 +302,143 @@ p {
     gap: 0.25rem;
 }
 
+.rain-text{
+    width: fit-content;
+}
+
 .rain-icon {
     width: 1rem;
 }
+
+
+.rain-cont{
+    display: flex;
+    
+    align-items: center;
+    width: fit-content;
+}
+
+/* Spinner */
+.spinner-container {
+    /* Display and position */
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    /* Sizing */
+    width: 100vw;
+    height: 100vh;
+    /* background */
+    background-color: var(--opaque-background);
+}
+
+
+
+
+.spinner {
+    /* sizing */
+    width: 75px;
+    height: 75px;
+    /* Border */
+    border-radius: 50%;
+    border: 5px solid #cfd0d1;
+    border-bottom: 5px solid var(--light-red);
+    /* Transformations and animations */
+    animation: 0.75s linear infinite spinner;
+    transform: translate3d(-50%, -50%, 0);
+
+}
+
+.loading-msg {
+    position: absolute;
+    border: 2px solid white;
+}
+
+.metric-imperial {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    font-family: sans-serif;
+}
+.switch-button {
+    background: rgba(255, 255, 255, 0.56);
+    border-radius: 30px;
+    overflow: hidden;
+    width: 240px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: var(--dark-blue);
+    position: relative;
+    padding-right: 120px;
+    position: relative;
+}
+.switch-button:before {
+    content: "°F";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    pointer-events: none;
+}
+.switch-button-checkbox {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 2;
+}
+.switch-button-checkbox:checked + .switch-button-label:before {
+    transform: translateX(120px);
+    transition: transform 300ms linear;
+}
+.switch-button-checkbox + .switch-button-label {
+    position: relative;
+    padding: 0.125rem 0;
+    display: block;
+    user-select: none;
+    pointer-events: none;
+}
+.switch-button-checkbox + .switch-button-label:before {
+    content: "";
+    background: #fff;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 30px;
+    transform: translateX(0);
+    transition: transform 300ms;
+}
+.switch-button-checkbox + .switch-button-label .switch-button-label-span {
+    position: relative;
+}
+
 
 /*  EFFECTS ------------------- */
 
 .dayofweek-container:hover {
     cursor: pointer;
     background-color: var(--opaque-background);
+}
+
+@keyframes spinner {
+    0% {
+        transform: translate3d(-50%, -50%, 0) rotate(0deg);
+    }
+
+    100% {
+        transform: translate3d(-50%, -50%, 0) rotate(360deg);
+    }
 }

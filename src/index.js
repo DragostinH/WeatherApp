@@ -12,7 +12,6 @@ import './style.css';
 import './img/icons/information-icon.png';
 import './img/icons/rain-drop-icon.png';
 import './img/icons/wind-icon.svg';
-import html from "../dist/index.html";
 
 
 const indexPage = (async () => {
@@ -68,9 +67,9 @@ const indexPage = (async () => {
     appendWeekViewElements(weekAheadInfo, weekAheadSection);
 
     updateWeatherCard(elementsObj, cityInfo);
-    // changeBodyBackgroundImage(weatherSection,
-    //     cityInfo[2].name,
-    //     cityInfo[3].current.weather[0].description);
+    changeBodyBackgroundImage(weatherSection,
+        cityInfo[2].name,
+        cityInfo[3].current.weather[0].description);
 
 
     submitBtn.addEventListener('click', (async () => {
@@ -83,9 +82,9 @@ const indexPage = (async () => {
                 updateWeatherCard(elementsObj,
                     cityInfo);
                 const weekView = createWeekView(cityInfo[3].daily);
-                // changeBodyBackgroundImage(weatherSection,
-                //     cityInfo[2].name,
-                //     cityInfo[3].current.weather[0].description);
+                changeBodyBackgroundImage(weatherSection,
+                    cityInfo[2].name,
+                    cityInfo[3].current.weather[0].description);
                 removeAllChildNodes(weekAheadSection);
                 appendWeekViewElements(weekView, weekAheadSection);
 
