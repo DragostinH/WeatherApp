@@ -3120,6 +3120,26 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", ({\n  value: true\n}));
 
 /***/ }),
 
+/***/ "./dist/index.html":
+/*!*************************!*\
+  !*** ./dist/index.html ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/html-loader/dist/runtime/getUrl.js */ \"./node_modules/html-loader/dist/runtime/getUrl.js\");\n/* harmony import */ var _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___HTML_LOADER_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ./main.js */ \"./dist/main.js\"), __webpack_require__.b);\nvar ___HTML_LOADER_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ../src/img/icons/wind-icon.svg */ \"./src/img/icons/wind-icon.svg\"), __webpack_require__.b);\nvar ___HTML_LOADER_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(/*! ../src/img/icons/information-icon.png */ \"./src/img/icons/information-icon.png\"), __webpack_require__.b);\n// Module\nvar ___HTML_LOADER_REPLACEMENT_0___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_0___);\nvar ___HTML_LOADER_REPLACEMENT_1___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_1___);\nvar ___HTML_LOADER_REPLACEMENT_2___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_2___);\nvar code = \"<!DOCTYPE html>\\n<html lang=\\\"en\\\">\\n\\n<head>\\n    <meta charset=\\\"UTF-8\\\">\\n    <meta http-equiv=\\\"X-UA-Compatible\\\" content=\\\"IE=edge\\\">\\n    <meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1.0\\\">\\n    <link rel=\\\"preconnect\\\" href=\\\"https://fonts.googleapis.com\\\">\\n    <link rel=\\\"preconnect\\\" href=\\\"https://fonts.gstatic.com\\\" crossorigin>\\n    <link href=\\\"https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;900&display=swap\\\"\\n        rel=\\\"stylesheet\\\">\\n    <script src=\\\"\" + ___HTML_LOADER_REPLACEMENT_0___ + \"\\\" defer></script>\\n    <title>Weather App | TOP</title>\\n</head>\\n\\n<body>\\n    <!-- Header -->\\n    <header>\\n        <h1>Weather App</h1>\\n    </header>\\n\\n    <!-- Main -->\\n    <main>\\n        <section class=\\\"search-bar\\\">\\n            <form action=\\\"#\\\" id=\\\"my-form\\\">\\n                <label for=\\\"search-bar\\\">Search city:\\n                    <input type=\\\"search\\\" name=\\\"search-bar\\\" id=\\\"search-bar\\\">\\n                </label>\\n            </form>\\n            <button class=\\\"submit-btn\\\">\\n                Submit\\n            </button>\\n        </section>\\n\\n        <section class=\\\"weather-section\\\">\\n            <article class=\\\"card-container\\\">\\n                <div class=\\\"area-info-container\\\">\\n                    <p class=\\\"city-p\\\">\\n                    </p>\\n                    <p class=\\\"country-code\\\"></p>\\n                </div>\\n                <div class=\\\"timeframe-container\\\">\\n                    <p class=\\\"timeframe\\\">CURRENT WEATHER</p>\\n                    <p class=\\\"current-datetime\\\"></p>\\n                </div>\\n                <div class=\\\"temperature-container\\\">\\n                    <div class=\\\"curr-temp-container\\\">\\n                        <img class=\\\"weather-icon\\\"\\n                            src=\\\"\" + ___HTML_LOADER_REPLACEMENT_1___ + \"\\\" alt=\\\"\\\">\\n                        <p class=\\\"curr-temp\\\">\\n                        </p>\\n                    </div>\\n                    <div class=\\\"weather-description-cont\\\">\\n                        <p class=\\\"weather-description\\\"></p>\\n                        <p class=\\\"feels-like-text\\\"> <span class=\\\"feels-like-temp\\\"></span></p>\\n                    </div>\\n                </div>\\n                <div class=\\\"weather-main\\\">\\n                    <div class=\\\"wind-cont\\\">\\n                        <p>WIND <a href=\\\"#\\\"><img class=\\\"info-icon\\\" src=\\\"\" + ___HTML_LOADER_REPLACEMENT_2___ + \"\\\"\\n                                    alt=\\\"letter i in a circle\\\"></a></p>\\n                        <div class=\\\"km\\\">\\n                            <p class=\\\"wind-reading\\\"> </p>\\n                            <img class=\\\"wind-icon\\\" src=\\\"\" + ___HTML_LOADER_REPLACEMENT_1___ + \"\\\" alt=\\\"#\\\">\\n                        </div>\\n                    </div>\\n                    <div class=\\\"humidity-cont\\\">\\n                        <p>HUMIDITY <a href=\\\"#\\\"><img class=\\\"info-icon\\\" src=\\\"\" + ___HTML_LOADER_REPLACEMENT_2___ + \"\\\"\\n                                    alt=\\\"letter i in a circle\\\"></a></p>\\n                        <p class=\\\"humidity-reading\\\"></p>\\n                    </div>\\n                    <div class=\\\"visibility-cont\\\">\\n                        <p>VISIBILITY <a href=\\\"#\\\"><img class=\\\"info-icon\\\" src=\\\"\" + ___HTML_LOADER_REPLACEMENT_2___ + \"\\\"\\n                                    alt=\\\"letter i in a circle\\\"></a></p>\\n                        <p class=\\\"visibility-reading\\\"></p>\\n                    </div>\\n                    <div class=\\\"pressure-cont\\\">\\n                        <p>PRESSURE <a href=\\\"#\\\"><img class=\\\"info-icon\\\" src=\\\"\" + ___HTML_LOADER_REPLACEMENT_2___ + \"\\\"\\n                                    alt=\\\"letter i in a circle\\\"></a></p>\\n                        <p class=\\\"pressure-reading\\\"></p>\\n                    </div>\\n                    <div class=\\\"dew-cont\\\">\\n                        <p>DEW POINT <a href=\\\"#\\\"><img class=\\\"info-icon\\\" src=\\\"\" + ___HTML_LOADER_REPLACEMENT_2___ + \"\\\"\\n                                    alt=\\\"letter i in a circle\\\"></a></p>\\n                        <p class=\\\"dew-degrees\\\"></p>\\n                    </div>\\n                </div>\\n            </article>\\n        </section>\\n\\n        <section class=\\\"weather-map-container\\\">\\n            <!-- <article class=\\\"weather-map-article\\\">\\n                <iframe\\n                    src=\\\"https://tile.openweathermap.org/map/temp_new/0/0/0.png?appid=b80bfc02e42b690c3e4ed8161d1574e4\\\"\\n                    frameborder=\\\"0\\\"></iframe>\\n            </article> -->\\n        </section>\\n\\n        <div class=\\\"test-div\\\">\\n            <section class=\\\"weekahead-view-container\\\">\\n\\n            </section>\\n        </div>\\n    </main>\\n\\n\\n    <!-- Footer -->\\n    <!-- <footer>\\n        <h2>Footer</h2>\\n    </footer> -->\\n</body>\\n\\n</html>\";\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (code);\n\n//# sourceURL=webpack://weatherapp/./dist/index.html?");
+
+/***/ }),
+
+/***/ "./node_modules/html-loader/dist/runtime/getUrl.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/html-loader/dist/runtime/getUrl.js ***!
+  \*********************************************************/
+/***/ ((module) => {
+
+eval("\n\nmodule.exports = function (url, options) {\n  if (!options) {\n    // eslint-disable-next-line no-param-reassign\n    options = {};\n  }\n\n  if (!url) {\n    return url;\n  } // eslint-disable-next-line no-underscore-dangle, no-param-reassign\n\n\n  url = String(url.__esModule ? url.default : url);\n\n  if (options.hash) {\n    // eslint-disable-next-line no-param-reassign\n    url += options.hash;\n  }\n\n  if (options.maybeNeedQuotes && /[\\t\\n\\f\\r \"'=<>`]/.test(url)) {\n    return \"\\\"\".concat(url, \"\\\"\");\n  }\n\n  return url;\n};\n\n//# sourceURL=webpack://weatherapp/./node_modules/html-loader/dist/runtime/getUrl.js?");
+
+/***/ }),
+
 /***/ "./src/style.css":
 /*!***********************!*\
   !*** ./src/style.css ***!
@@ -3306,7 +3326,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\nconst { format, fromUnixTime, getUnixTime, parseISO, parse } = __webpack_require__(/*! date-fns */ \"./node_modules/date-fns/esm/index.js\");\nconst { getTimezoneOffset, utcToZonedTime } = __webpack_require__(/*! date-fns-tz */ \"./node_modules/date-fns-tz/index.js\");\nconst { changeBodyBackgroundImage } = __webpack_require__(/*! ./changeBodyBackground */ \"./src/changeBodyBackground.js\");\nconst { getCountryObj } = __webpack_require__(/*! ./getCountryObj */ \"./src/getCountryObj.js\");\nconst { default: getCountryFlag } = __webpack_require__(/*! ./getCountryFlag */ \"./src/getCountryFlag.js\");\nconst { getWeatherData } = __webpack_require__(/*! ./getWeatherData */ \"./src/getWeatherData.js\");\nconst { default: updateWeatherCard } = __webpack_require__(/*! ./updateWeatherCard */ \"./src/updateWeatherCard.js\");\nconst { default: createWeekView } = __webpack_require__(/*! ./createWeekView */ \"./src/createWeekView.js\");\nconst { default: removeAllChildNodes } = __webpack_require__(/*! ./removeAllChildNodes */ \"./src/removeAllChildNodes.js\");\nconst { default: appendWeekViewElements } = __webpack_require__(/*! ./appendWeekViewElements */ \"./src/appendWeekViewElements.js\");\n\n\n\nconst indexPage = (async () => {\n    // Finding with lattitude and longitude:\n    // https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}\n\n    // Finding geo location with name:\n    // http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid={API key}\n\n    // Weather forecast for 30 days:\n    // https://pro.openweathermap.org/data/2.5/forecast/climate?lat={lat}&lon={lon}&appid={API key}\n\n    // Getting weather ICON png\n    // http://openweathermap.org/img/wn/{ICON ID}@2x.png\n\n    // Getting FLAG icon png\n    // https://countryflagsapi.com/png/{COUNTGRY CODE}\n\n    // API Key for Openweathermap:\n    // b80bfc02e42b690c3e4ed8161d1574e4 \n\n    // Page search field:\n    const searchBar = document.querySelector('#search-bar');\n\n    // Search submit btn:\n    const submitBtn = document.querySelector('.submit-btn')\n\n    // Main weather container \n    const weatherSection = document.querySelector('.weather-section');\n\n    // Week ahead container\n    const weekAheadSection = document.querySelector('.weekahead-view-container');\n\n    const elementsObj = {\n        cityName: document.querySelector('.city-p'),\n        countryCode: document.querySelector('.country-code'),\n        dateTime: document.querySelector('.current-datetime'),\n        weatherIcon: document.querySelector('.weather-icon'),\n        currTemp: document.querySelector('.curr-temp'),\n        weatherDesc: document.querySelector('.weather-description'),\n        feelsLikeText: document.querySelector('.feels-like-text'),\n        feelsLikeTemp: document.querySelector('.feels-like-temp'),\n        windSpeed: document.querySelector('.wind-reading'),\n        windDeg: document.querySelector('.wind-icon'),\n        humidity: document.querySelector('.humidity-reading'),\n        visibility: document.querySelector('.visibility-reading'),\n        pressure: document.querySelector('.pressure-reading'),\n        dewTemp: document.querySelector('.dew-degrees')\n    }\n\n    let cityInfo = (await getWeatherData('London')).resolvedPromises;\n    const weekAheadInfo = createWeekView(cityInfo[3].daily);\n    appendWeekViewElements(weekAheadInfo, weekAheadSection);\n\n    updateWeatherCard(elementsObj, cityInfo);\n    // changeBodyBackgroundImage(weatherSection,\n    //     cityInfo[2].name,\n    //     cityInfo[3].current.weather[0].description);\n\n\n    submitBtn.addEventListener('click', (async () => {\n        const input = searchBar.value.trim();\n        if (input === '') {\n            console.error('Please input a city');\n        } else {\n            try {\n                cityInfo = (await getWeatherData(input)).resolvedPromises;\n                updateWeatherCard(elementsObj,\n                    cityInfo);\n                const weekView = createWeekView(cityInfo[3].daily);\n                // changeBodyBackgroundImage(weatherSection,\n                //     cityInfo[2].name,\n                //     cityInfo[3].current.weather[0].description);\n                removeAllChildNodes(weekAheadSection);\n                appendWeekViewElements(weekView, weekAheadSection);\n\n            } catch {\n                console.error('Something went wrong with getting the weather data.');\n\n            }\n        }\n\n    }));\n\n\n\n\n    // testing -------------------------------\n    // console.log(getWeatherData('Sofia'));\n    // console.log(getCountryObj('Sofia'));\n\n    // op: TA2\n    // z(zoom lvl)\n    // x: x tile coordinate\n    // y: y tile coordinate\n\n    // lat: 42.6978634\n    // lon: 23.3221789\n    // API key: b80bfc02e42b690c3e4ed8161d1574e4\n\n    // Weather map URL template:\n    // https://maps.openweathermap.org/maps/2.0/weather/1h/{op}/{z}/{x}/{y}?appid={API key}\n\n    // Weather map URL tester:\n    // https://maps.openweathermap.org/maps/2.0/weather/1h/TA2/1/1/1?appid=b80bfc02e42b690c3e4ed8161d1574e4\n\n\n\n\n\n\n\n\n\n\n})();\n\n//# sourceURL=webpack://weatherapp/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _img_icons_information_icon_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./img/icons/information-icon.png */ \"./src/img/icons/information-icon.png\");\n/* harmony import */ var _img_icons_rain_drop_icon_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./img/icons/rain-drop-icon.png */ \"./src/img/icons/rain-drop-icon.png\");\n/* harmony import */ var _img_icons_wind_icon_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./img/icons/wind-icon.svg */ \"./src/img/icons/wind-icon.svg\");\n/* harmony import */ var _dist_index_html__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../dist/index.html */ \"./dist/index.html\");\nconst { format, fromUnixTime, getUnixTime, parseISO, parse } = __webpack_require__(/*! date-fns */ \"./node_modules/date-fns/esm/index.js\");\nconst { getTimezoneOffset, utcToZonedTime } = __webpack_require__(/*! date-fns-tz */ \"./node_modules/date-fns-tz/index.js\");\nconst { changeBodyBackgroundImage } = __webpack_require__(/*! ./changeBodyBackground */ \"./src/changeBodyBackground.js\");\nconst { getCountryObj } = __webpack_require__(/*! ./getCountryObj */ \"./src/getCountryObj.js\");\nconst { default: getCountryFlag } = __webpack_require__(/*! ./getCountryFlag */ \"./src/getCountryFlag.js\");\nconst { getWeatherData } = __webpack_require__(/*! ./getWeatherData */ \"./src/getWeatherData.js\");\nconst { default: updateWeatherCard } = __webpack_require__(/*! ./updateWeatherCard */ \"./src/updateWeatherCard.js\");\nconst { default: createWeekView } = __webpack_require__(/*! ./createWeekView */ \"./src/createWeekView.js\");\nconst { default: removeAllChildNodes } = __webpack_require__(/*! ./removeAllChildNodes */ \"./src/removeAllChildNodes.js\");\nconst { default: appendWeekViewElements } = __webpack_require__(/*! ./appendWeekViewElements */ \"./src/appendWeekViewElements.js\");\n\n\n\n\n\n\n\nconst indexPage = (async () => {\n    // Finding with lattitude and longitude:\n    // https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}\n\n    // Finding geo location with name:\n    // http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid={API key}\n\n    // Weather forecast for 30 days:\n    // https://pro.openweathermap.org/data/2.5/forecast/climate?lat={lat}&lon={lon}&appid={API key}\n\n    // Getting weather ICON png\n    // http://openweathermap.org/img/wn/{ICON ID}@2x.png\n\n    // Getting FLAG icon png\n    // https://countryflagsapi.com/png/{COUNTGRY CODE}\n\n    // API Key for Openweathermap:\n    // b80bfc02e42b690c3e4ed8161d1574e4 \n\n    // Page search field:\n    const searchBar = document.querySelector('#search-bar');\n\n    // Search submit btn:\n    const submitBtn = document.querySelector('.submit-btn')\n\n    // Main weather container \n    const weatherSection = document.querySelector('.weather-section');\n\n    // Week ahead container\n    const weekAheadSection = document.querySelector('.weekahead-view-container');\n\n    const elementsObj = {\n        cityName: document.querySelector('.city-p'),\n        countryCode: document.querySelector('.country-code'),\n        dateTime: document.querySelector('.current-datetime'),\n        weatherIcon: document.querySelector('.weather-icon'),\n        currTemp: document.querySelector('.curr-temp'),\n        weatherDesc: document.querySelector('.weather-description'),\n        feelsLikeText: document.querySelector('.feels-like-text'),\n        feelsLikeTemp: document.querySelector('.feels-like-temp'),\n        windSpeed: document.querySelector('.wind-reading'),\n        windDeg: document.querySelector('.wind-icon'),\n        humidity: document.querySelector('.humidity-reading'),\n        visibility: document.querySelector('.visibility-reading'),\n        pressure: document.querySelector('.pressure-reading'),\n        dewTemp: document.querySelector('.dew-degrees')\n    }\n\n    let cityInfo = (await getWeatherData('London')).resolvedPromises;\n    const weekAheadInfo = createWeekView(cityInfo[3].daily);\n    appendWeekViewElements(weekAheadInfo, weekAheadSection);\n\n    updateWeatherCard(elementsObj, cityInfo);\n    // changeBodyBackgroundImage(weatherSection,\n    //     cityInfo[2].name,\n    //     cityInfo[3].current.weather[0].description);\n\n\n    submitBtn.addEventListener('click', (async () => {\n        const input = searchBar.value.trim();\n        if (input === '') {\n            console.error('Please input a city');\n        } else {\n            try {\n                cityInfo = (await getWeatherData(input)).resolvedPromises;\n                updateWeatherCard(elementsObj,\n                    cityInfo);\n                const weekView = createWeekView(cityInfo[3].daily);\n                // changeBodyBackgroundImage(weatherSection,\n                //     cityInfo[2].name,\n                //     cityInfo[3].current.weather[0].description);\n                removeAllChildNodes(weekAheadSection);\n                appendWeekViewElements(weekView, weekAheadSection);\n\n            } catch {\n                console.error('Something went wrong with getting the weather data.');\n\n            }\n        }\n\n    }));\n\n\n\n\n    // testing -------------------------------\n    // console.log(getWeatherData('Sofia'));\n    // console.log(getCountryObj('Sofia'));\n\n    // op: TA2\n    // z(zoom lvl)\n    // x: x tile coordinate\n    // y: y tile coordinate\n\n    // lat: 42.6978634\n    // lon: 23.3221789\n    // API key: b80bfc02e42b690c3e4ed8161d1574e4\n\n    // Weather map URL template:\n    // https://maps.openweathermap.org/maps/2.0/weather/1h/{op}/{z}/{x}/{y}?appid={API key}\n\n    // Weather map URL tester:\n    // https://maps.openweathermap.org/maps/2.0/weather/1h/TA2/1/1/1?appid=b80bfc02e42b690c3e4ed8161d1574e4\n\n\n\n\n\n\n\n\n\n\n})();\n\n//# sourceURL=webpack://weatherapp/./src/index.js?");
 
 /***/ }),
 
@@ -3337,6 +3357,46 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ widenDiv)\n/* harmony export */ });\nfunction widenDiv(element) {\n\n    element.addEventListener('click', () => {\n\n        const mainArr = Array.from(document.getElementsByClassName('dayofweek-container'));\n        const tempContArr = Array.from(document.getElementsByClassName('weather-desc-cont'));\n \n        mainArr.forEach((e) => {\n            e.style.width = \"fit-content\";\n        })\n        tempContArr.forEach((el) => {\n            el.style.display = \"none\";\n        });\n\n\n\n\n        element.style.width = \"336px\";\n        element.childNodes[1].childNodes[1].style.display = \"block\";\n    })\n}\n\n//# sourceURL=webpack://weatherapp/./src/widenDiv.js?");
+
+/***/ }),
+
+/***/ "./dist/main.js":
+/*!**********************!*\
+  !*** ./dist/main.js ***!
+  \**********************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"7c32188d559b13f7db5f.js\";\n\n//# sourceURL=webpack://weatherapp/./dist/main.js?");
+
+/***/ }),
+
+/***/ "./src/img/icons/information-icon.png":
+/*!********************************************!*\
+  !*** ./src/img/icons/information-icon.png ***!
+  \********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"ae9187425bf1c5e194e4.png\";\n\n//# sourceURL=webpack://weatherapp/./src/img/icons/information-icon.png?");
+
+/***/ }),
+
+/***/ "./src/img/icons/rain-drop-icon.png":
+/*!******************************************!*\
+  !*** ./src/img/icons/rain-drop-icon.png ***!
+  \******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"91be0da9a80c38dbb09b.png\";\n\n//# sourceURL=webpack://weatherapp/./src/img/icons/rain-drop-icon.png?");
+
+/***/ }),
+
+/***/ "./src/img/icons/wind-icon.svg":
+/*!*************************************!*\
+  !*** ./src/img/icons/wind-icon.svg ***!
+  \*************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"e286517193a98d2368ad.svg\";\n\n//# sourceURL=webpack://weatherapp/./src/img/icons/wind-icon.svg?");
 
 /***/ }),
 
@@ -3486,6 +3546,9 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", ({\n  value: true\n}));
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
@@ -3511,6 +3574,18 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", ({\n  value: true\n}));
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -3525,6 +3600,52 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", ({\n  value: true\n}));
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		__webpack_require__.b = document.baseURI || self.location.href;
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"main": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		// no on chunks loaded
+/******/ 		
+/******/ 		// no jsonp function
 /******/ 	})();
 /******/ 	
 /************************************************************************/
