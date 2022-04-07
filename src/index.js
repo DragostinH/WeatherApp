@@ -8,6 +8,7 @@ const { default: updateWeatherCard } = require("./updateWeatherCard");
 const { default: createWeekView } = require("./createWeekView");
 const { default: removeAllChildNodes } = require("./removeAllChildNodes");
 const { default: appendWeekViewElements } = require("./appendWeekViewElements");
+import './style.css';
 
 
 const indexPage = (async () => {
