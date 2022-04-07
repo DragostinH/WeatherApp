@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <script src="./main.js" defer></script>
+    <title>Weather App | TOP</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Weather App</h1>
+    </header>
+
+    <!-- Main -->
+    <main>
+        <section class="search-bar">
+            <form action="#" id="my-form">
+                <label for="search-bar">Search city:
+                    <input type="search" name="search-bar" id="search-bar">
+                </label>
+            </form>
+            <button class="submit-btn">
+                Submit
+            </button>
+        </section>
+
+        <section class="weather-section">
+            <article class="card-container">
+                <div class="area-info-container">
+                    <p class="city-p">
+                    </p>
+                    <p class="country-code"></p>
+                </div>
+                <div class="timeframe-container">
+                    <p class="timeframe">CURRENT WEATHER</p>
+                    <p class="current-datetime"></p>
+                </div>
+                <div class="temperature-container">
+                    <div class="curr-temp-container">
+                        <img class="weather-icon"
+                            src="../src/img/weatherIcons/weather-icons-master/svg/wi-cloud-down.svg" alt="">
+                        <p class="curr-temp">
+                        </p>
+                    </div>
+                    <div class="weather-description-cont">
+                        <p class="weather-description"></p>
+                        <p class="feels-like-text"> <span class="feels-like-temp"></span></p>
+                    </div>
+                </div>
+                <div class="weather-main">
+                    <div class="wind-cont">
+                        <p>WIND <a href="#"><img class="info-icon" src="../src/img/icons/information-icon.png"
+                                    alt="letter i in a circle"></a></p>
+                        <div class="km">
+                            <p class="wind-reading"> </p>
+                            <img class="wind-icon" src="../src/img/icons/wind-icon.svg" alt="#">
+                        </div>
+                    </div>
+                    <div class="humidity-cont">
+                        <p>HUMIDITY <a href="#"><img class="info-icon" src="../src/img/icons/information-icon.png"
+                                    alt="letter i in a circle"></a></p>
+                        <p class="humidity-reading"></p>
+                    </div>
+                    <div class="visibility-cont">
+                        <p>VISIBILITY <a href="#"><img class="info-icon" src="../src/img/icons/information-icon.png"
+                                    alt="letter i in a circle"></a></p>
+                        <p class="visibility-reading"></p>
+                    </div>
+                    <div class="pressure-cont">
+                        <p>PRESSURE <a href="#"><img class="info-icon" src="../src/img/icons/information-icon.png"
+                                    alt="letter i in a circle"></a></p>
+                        <p class="pressure-reading"></p>
+                    </div>
+                    <div class="dew-cont">
+                        <p>DEW POINT <a href="#"><img class="info-icon" src="../src/img/icons/information-icon.png"
+                                    alt="letter i in a circle"></a></p>
+                        <p class="dew-degrees"></p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="weather-map-container">
+            <!-- <article class="weather-map-article">
+                <iframe
+                    src="https://tile.openweathermap.org/map/temp_new/0/0/0.png?appid=b80bfc02e42b690c3e4ed8161d1574e4"
+                    frameborder="0"></iframe>
+            </article> -->
+        </section>
+
+        <div class="test-div">
+            <section class="weekahead-view-container">
+
+            </section>
+        </div>
+    </main>
+
+
+    <!-- Footer -->
+    <!-- <footer>
+        <h2>Footer</h2>
+    </footer> -->
+</body>
+
+</html>
