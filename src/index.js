@@ -15,23 +15,6 @@ import './img/icons/wind-icon.svg';
 
 
 const indexPage = (async () => {
-    // Finding with lattitude and longitude:
-    // https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
-
-    // Finding geo location with name:
-    // http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid={API key}
-
-    // Weather forecast for 30 days:
-    // https://pro.openweathermap.org/data/2.5/forecast/climate?lat={lat}&lon={lon}&appid={API key}
-
-    // Getting weather ICON png
-    // http://openweathermap.org/img/wn/{ICON ID}@2x.png
-
-    // Getting FLAG icon png
-    // https://countryflagsapi.com/png/{COUNTGRY CODE}
-
-    // API Key for Openweathermap:
-    // b80bfc02e42b690c3e4ed8161d1574e4 
 
     // Page search field:
     const searchBar = document.querySelector('#search-bar');
