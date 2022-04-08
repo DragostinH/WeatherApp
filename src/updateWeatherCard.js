@@ -1,7 +1,8 @@
 import { format, fromUnixTime } from "date-fns";
 import { utcToZonedTime } from "date-fns-tz";
 
-export default function updateWeatherCard(elementsObj, weatherData) {
+export default function updateWeatherCard(elementsObj, weatherData, unitType) {
+    let unit = (unitType === 'metric') ? '°C' : '°F';
     const cityInfo = weatherData;
     const cityNameAndId = weatherData[2];
     const cityMainInfo = weatherData[3].current;
@@ -14,15 +15,15 @@ export default function updateWeatherCard(elementsObj, weatherData) {
     elementsObj.countryCode.textContent = cityNameAndId.sys.country;
     elementsObj.dateTime.textContent = formattedTime;
     elementsObj.weatherIcon.src = `http://openweathermap.org/img/wn/${cityMainInfo.weather[0].icon}@2x.png`;
-    elementsObj.currTemp.textContent = `${Math.floor(cityMainInfo.temp)} °C`;
+    elementsObj.currTemp.textContent = `${Math.floor(cityMainInfo.temp)} ${unit}`;
     elementsObj.weatherDesc.textContent = cityMainInfo.weather[0].description.toUpperCase();
-    elementsObj.feelsLikeTemp.textContent = `${Math.floor(cityMainInfo.feels_like)} °C`;
+    elementsObj.feelsLikeTemp.textContent = `${Math.floor(cityMainInfo.feels_like)} ${unit}`;
 
     elementsObj.windSpeed.textContent = `${Math.floor(cityMainInfo.wind_speed)} km/h`;
     elementsObj.windDeg.style.transform = `rotate(${cityMainInfo.wind_deg}deg)`;
     elementsObj.humidity.textContent = `${cityMainInfo.humidity} %`;
     elementsObj.visibility.textContent = `${(cityMainInfo.visibility) / 1000} km`;
     elementsObj.pressure.textContent = `${cityMainInfo.pressure} hPa`;
-    elementsObj.dewTemp.textContent = `${Math.floor(cityMainInfo.dew_point)} °C`;
+    elementsObj.dewTemp.textContent = `${Math.floor(cityMainInfo.dew_point)} ${unit}`;
 
 }

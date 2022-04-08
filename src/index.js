@@ -1,17 +1,14 @@
-const { format, fromUnixTime, getUnixTime, parseISO, parse } = require("date-fns");
-const { getTimezoneOffset, utcToZonedTime } = require("date-fns-tz");
-const { changeBodyBackgroundImage } = require("./changeBodyBackground");
-const { getCountryObj } = require("./getCountryObj");
-const { default: getCountryFlag } = require("./getCountryFlag");
-const { getWeatherData } = require("./getWeatherData");
-const { default: updateWeatherCard } = require("./updateWeatherCard");
-const { default: createWeekView } = require("./createWeekView");
-const { default: removeAllChildNodes } = require("./removeAllChildNodes");
-const { default: appendWeekViewElements } = require("./appendWeekViewElements");
+import { changeBodyBackgroundImage } from "./changeBodyBackground";
+import { getWeatherData } from "./getWeatherData";
+import updateWeatherCard from "./updateWeatherCard";
+import createWeekView from "./createWeekView";
+import removeAllChildNodes from "./removeAllChildNodes";
+import appendWeekViewElements from "./appendWeekViewElements";
 import './style.css';
 import './img/icons/information-icon.png';
 import './img/icons/rain-drop-icon.png';
 import './img/icons/wind-icon.svg';
+import checkUnitType from './checkUnitType';
 
 
 const indexPage = (async () => {
@@ -24,9 +21,15 @@ const indexPage = (async () => {
 
     // Main weather container 
     const weatherSection = document.querySelector('.weather-section');
+    weatherSection.style.display = "none";
 
     // Week ahead container
     const weekAheadSection = document.querySelector('.weekahead-view-container');
+    weekAheadSection.style.display = "none";
+
+    // Switch btn
+    const unitSwitchBtn = document.querySelector('.switch-button-checkbox');
+
 
     const elementsObj = {
         cityName: document.querySelector('.city-p'),
@@ -45,26 +48,40 @@ const indexPage = (async () => {
         dewTemp: document.querySelector('.dew-degrees')
     }
 
-    let cityInfo = (await getWeatherData('London')).resolvedPromises;
-    const weekAheadInfo = createWeekView(cityInfo[3].daily);
-    appendWeekViewElements(weekAheadInfo, weekAheadSection);
+    // City information from fetch request:
+    let cityInfo;
+    
+    unitSwitchBtn.addEventListener('click', async () => {
+        // let input = searchBar.value.trim();
+        let input = elementsObj.cityName.textContent;
 
-    updateWeatherCard(elementsObj, cityInfo);
-    changeBodyBackgroundImage(weatherSection,
-        cityInfo[2].name,
-        cityInfo[3].current.weather[0].description);
+        const unitType = checkUnitType(unitSwitchBtn);
+        cityInfo = (await getWeatherData(input, unitType)).resolvedPromises;
+        const weekAheadInfo = createWeekView(cityInfo[3].daily, unitType);
+        updateWeatherCard(elementsObj, cityInfo, unitType);
+        removeAllChildNodes(weekAheadSection);
+        appendWeekViewElements(weekAheadInfo, weekAheadSection);
+        changeBodyBackgroundImage(weatherSection,
+            cityInfo[2].name,
+            cityInfo[3].current.weather[0].description);
+
+    });
+
 
 
     submitBtn.addEventListener('click', (async () => {
+        weatherSection.style.display = "block";
+        weekAheadSection.style.display = "flex";
         const input = searchBar.value.trim();
+        const unitType = checkUnitType(unitSwitchBtn);
+
         if (input === '') {
             console.error('Please input a city');
         } else {
             try {
-                cityInfo = (await getWeatherData(input)).resolvedPromises;
-                updateWeatherCard(elementsObj,
-                    cityInfo);
-                const weekView = createWeekView(cityInfo[3].daily);
+                cityInfo = (await getWeatherData(input, unitType)).resolvedPromises;
+                updateWeatherCard(elementsObj, cityInfo, unitType);
+                const weekView = createWeekView(cityInfo[3].daily, unitType);
                 changeBodyBackgroundImage(weatherSection,
                     cityInfo[2].name,
                     cityInfo[3].current.weather[0].description);
@@ -82,24 +99,6 @@ const indexPage = (async () => {
 
 
 
-    // testing -------------------------------
-    // console.log(getWeatherData('Sofia'));
-    // console.log(getCountryObj('Sofia'));
-
-    // op: TA2
-    // z(zoom lvl)
-    // x: x tile coordinate
-    // y: y tile coordinate
-
-    // lat: 42.6978634
-    // lon: 23.3221789
-    // API key: b80bfc02e42b690c3e4ed8161d1574e4
-
-    // Weather map URL template:
-    // https://maps.openweathermap.org/maps/2.0/weather/1h/{op}/{z}/{x}/{y}?appid={API key}
-
-    // Weather map URL tester:
-    // https://maps.openweathermap.org/maps/2.0/weather/1h/TA2/1/1/1?appid=b80bfc02e42b690c3e4ed8161d1574e4
 
 
 

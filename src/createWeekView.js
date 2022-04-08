@@ -2,7 +2,7 @@ import { format, fromUnixTime } from "date-fns";
 import createWeekElemends from "./createWeekElements";
 import createDiv from "./createElementsFunctions/createDiv";
 
-export default function createWeekView(data) {
+export default function createWeekView(data, unitType) {
     /*
     1. Date paragraph
     2. Weather icon container
@@ -36,7 +36,7 @@ export default function createWeekView(data) {
     }
 
 
-    return createWeekElemends(weekendObj);
+    return createWeekElemends(weekendObj, unitType);
 
 
 }

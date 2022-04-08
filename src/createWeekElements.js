@@ -3,8 +3,9 @@ import createImg from "./createElementsFunctions/createImg";
 import createParagraph from "./createElementsFunctions/createParagraph.js";
 import widenDiv from "./widenDiv";
 
-export default function createWeekElemends(obj) {
+export default function createWeekElemends(obj, unitType = 'metric') {
     let weekElementsObj = {};
+    let unit = (unitType === 'metric') ? '°C' : '°F';
 
 
     for (const key in obj) {
@@ -27,8 +28,8 @@ export default function createWeekElemends(obj) {
         // Info updates
         datePara.textContent = element.currDay;
         weatherIcon.src = `http://openweathermap.org/img/wn/${element.weatherIcon}@2x.png`;
-        maxTemp.textContent = `${element.maxTemp}°C`;
-        minTemp.textContent = `${element.minTemp}°C`;
+        maxTemp.textContent = `${element.maxTemp}${unit}`;
+        minTemp.textContent = `${element.minTemp}${unit}`;
         weatherMainDesc.textContent = element.weatherDesc;
         rainIcon.src = "../src/img/icons/rain-drop-icon.png";
         rainText.textContent = `${element.chanceOfRain}%`
