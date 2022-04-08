@@ -9,6 +9,7 @@ import './img/icons/information-icon.png';
 import './img/icons/rain-drop-icon.png';
 import './img/icons/wind-icon.svg';
 import checkUnitType from './checkUnitType';
+import isLoading from "./isLoading";
 
 
 const indexPage = (async () => {
@@ -50,12 +51,13 @@ const indexPage = (async () => {
 
     // City information from fetch request:
     let cityInfo;
-    
+  
+
     unitSwitchBtn.addEventListener('click', async () => {
-        // let input = searchBar.value.trim();
         let input = elementsObj.cityName.textContent;
 
         const unitType = checkUnitType(unitSwitchBtn);
+        isLoading(true);
         cityInfo = (await getWeatherData(input, unitType)).resolvedPromises;
         const weekAheadInfo = createWeekView(cityInfo[3].daily, unitType);
         updateWeatherCard(elementsObj, cityInfo, unitType);
@@ -64,6 +66,7 @@ const indexPage = (async () => {
         changeBodyBackgroundImage(weatherSection,
             cityInfo[2].name,
             cityInfo[3].current.weather[0].description);
+        isLoading(false);
 
     });
 
@@ -71,7 +74,7 @@ const indexPage = (async () => {
 
     submitBtn.addEventListener('click', (async () => {
         weatherSection.style.display = "block";
-        weekAheadSection.style.display = "flex";
+        weekAheadSection.style.display = "grid";
         const input = searchBar.value.trim();
         const unitType = checkUnitType(unitSwitchBtn);
 
@@ -79,6 +82,7 @@ const indexPage = (async () => {
             console.error('Please input a city');
         } else {
             try {
+                isLoading(true);
                 cityInfo = (await getWeatherData(input, unitType)).resolvedPromises;
                 updateWeatherCard(elementsObj, cityInfo, unitType);
                 const weekView = createWeekView(cityInfo[3].daily, unitType);
@@ -87,6 +91,7 @@ const indexPage = (async () => {
                     cityInfo[3].current.weather[0].description);
                 removeAllChildNodes(weekAheadSection);
                 appendWeekViewElements(weekView, weekAheadSection);
+                isLoading(false);
 
             } catch {
                 console.error('Something went wrong with getting the weather data.');
@@ -95,18 +100,4 @@ const indexPage = (async () => {
         }
 
     }));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 })();

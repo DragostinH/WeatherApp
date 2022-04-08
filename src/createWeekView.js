@@ -3,13 +3,6 @@ import createWeekElemends from "./createWeekElements";
 import createDiv from "./createElementsFunctions/createDiv";
 
 export default function createWeekView(data, unitType) {
-    /*
-    1. Date paragraph
-    2. Weather icon container
-    3. Max and Min temp container
-    4. Weather desc and chance of rain container
-    */
-
     let weekendObj = {};
 
     for (let i = 0; i < data.length; i++) {

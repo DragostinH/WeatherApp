@@ -6,7 +6,7 @@ export default function widenDiv(element) {
         const tempContArr = Array.from(document.getElementsByClassName('weather-desc-cont'));
  
         mainArr.forEach((e) => {
-            e.style.width = "fit-content";
+            // e.style.width = "fit-content";
         })
         tempContArr.forEach((el) => {
             el.style.display = "none";

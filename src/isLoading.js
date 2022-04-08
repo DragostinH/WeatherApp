@@ -1,12 +1,8 @@
 export default function isLoading(value) {
     const spinnerContainer = document.querySelector('.spinner-container');
-    if (value === true) {
-        spinnerContainer.style.display = "flex";
-
-    } else {
+    
+    value ? spinnerContainer.style.display = "flex" :
         spinnerContainer.style.display = "none";
-
-    }
 
 
 }
